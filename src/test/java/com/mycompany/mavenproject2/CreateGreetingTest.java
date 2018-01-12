@@ -77,7 +77,8 @@ public class CreateGreetingTest {
     public void givenExistingGreetingUpdateGreetingShouldUpdate() {
         //Arrange
         GreetingModel model = mock(GreetingModel.class);
-        UUID id = UUID.fromString("aa216415-1b8e-4ab9-8531-fcbd25d5966f");
+        //UUID id = UUID.fromString("aa216415-1b8e-4ab9-8531-fcbd25d5966f");
+        UUID id = UUID.fromString("aa216415-1b8e");
         given(randomUuidSupplier.get()).willReturn(id);
 
         //Act
