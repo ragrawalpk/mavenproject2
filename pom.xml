@@ -53,7 +53,30 @@
                             <includes>
                                 <include>**/*IT.java</include>
                             </includes>
+                        
+                        <!--added-->
+                        <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>io.qameta.allure.junit4.AllureJunit4</value>
+                        </property>
+                    </properties>
+                    <systemProperties>
+                        <property>
+                            <name>allure.results.directory</name>
+                            <value>${project.build.directory}/allure-results</value>
+                        </property>
+                        <property>
+                            <name>allure.link.issue.pattern</name>
+                            <value>https://example.org/issue/{}</value>
+                        </property>
+                    </systemProperties>
+                            
+                        
                         </configuration>
+                        
+                        
+                        
                     </execution>
                     <execution>
                         <id>system-test</id>
@@ -119,6 +142,11 @@
                 </executions>
         
       </plugin>
+        <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.8</version>
+            </plugin>
         </plugins>
     </build>
     <reporting>
@@ -184,6 +212,12 @@
             <artifactId>cobertura-maven-plugin</artifactId>
             <version>2.7</version>
             <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit4</artifactId>
+            <version>2.0-BETA13</version>
         </dependency>
 
         
