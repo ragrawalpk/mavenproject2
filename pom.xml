@@ -104,24 +104,20 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>cobertura-maven-plugin</artifactId>
         <version>2.7</version>
-        <configuration>
-          <instrumentation>
-            <ignores>
-              <ignore>com.example.boringcode.*</ignore>
-            </ignores>
-            <excludes>
-              <exclude>com/example/dullcode/**/*.class</exclude>
-              <exclude>com/example/**/*Test.class</exclude>
-            </excludes>
-          </instrumentation>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>clean</goal>
-            </goals>
-          </execution>
-        </executions>
+       <configuration>
+                    <formats>
+                        <format>xml</format>
+                    </formats>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>cobertura</goal>
+                        </goals>
+                    </execution>
+                </executions>
+        
       </plugin>
         </plugins>
     </build>
